@@ -6,13 +6,16 @@
     <title>@yield('title')</title>
     <!-- favicon -->
     <!-- estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <!-- header -->
     <!-- nav -->
 
     <!-- main -->
-    @yield('content')
+    <div class="container">
+        @yield('content')
+    </div>
 
     <!-- footer -->
 </body>

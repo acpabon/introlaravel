@@ -21,9 +21,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeController::class);
 
 Route::controller(CourseController::class)->group(function(){
-    Route::get('/cursos', 'index');
-    Route::get('/cursos/create', 'create');
-    Route::get('/cursos/{curso}', 'show');
+    Route::get('/cursos', 'index')->name('courses.index');
+    Route::get('/cursos/create', 'create')->name('courses.create');
+    Route::get('/cursos/{curso}', 'show')->name('courses.show');
+    Route::get('/cursos/edit/{curso}', 'edit')->name('courses.edit');
+    Route::post('/cursos', 'store')->name('courses.store');
+    Route::put('/cursos/{curso}', 'update')->name('courses.update');
+    Route::delete('/cursos/{curso}', 'destroy')->name('courses.destroy');
 });
 
 // Route::get('/cursos/{curso?}', function ($curso = null) {
